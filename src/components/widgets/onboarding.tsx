@@ -17,10 +17,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
 import { SVGProps } from "react";
 import { JSX } from "react/jsx-runtime";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 export function Onboarding() {
   return (
-    <Card className="mx-auto max-w-md">
+    <Card className="mx-auto max-w-lg">
       <CardHeader>
         <CardTitle className="text-2xl">Before we begin</CardTitle>
         <CardDescription>
@@ -30,7 +31,7 @@ export function Onboarding() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs className="mx-auto max-w-sm" defaultValue="import">
+        <Tabs className="mx-auto max-w-lg" defaultValue="import">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="import">Import Sizer</TabsTrigger>
             <TabsTrigger value="manual">Continue Manually</TabsTrigger>
@@ -64,12 +65,77 @@ export function Onboarding() {
             </div>
           </TabsContent>
           <TabsContent value="manual">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
-              feugiat nunc. Nullam at neque nec nunc tincidunt ullamcorper.
-              Nulla facilisi. Suspendisse potenti. Nulla facilisi. Suspendisse
-              potenti. Nulla facilisi. Suspendisse
-            </p>
+            <div className="mt-4 grid gap-4">
+              <div className="grid gap-2">
+                <Label>Branding</Label>
+                <div>
+                  <RadioGroup
+                    defaultValue="rcn"
+                    className="flex items-center space-x-2"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="default" id="r1" />
+                      <Label htmlFor="r1">RCN</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="nobrand" id="r2" />
+                      <Label htmlFor="r2">No Branding</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="brokerage" id="r3" />
+                      <Label htmlFor="r3">Brokerage</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="cclcontact" id="r4" />
+                      <Label htmlFor="r4">CCL contact</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="base-program">Base Program</Label>
+                <Select defaultValue="option1" id="base-program">
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select base program" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="use-of-funds">Use of Funds</Label>
+                <Select defaultValue="option1" id="use-of-funds">
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select use of funds" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="property-type">Property Type</Label>
+                <Select defaultValue="option1" id="property-type">
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select property type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <div className="flex justify-between gap-4 mt-4">
+              <Button variant="outline">Cancel</Button>
+              <Button>Save</Button>
+            </div>
           </TabsContent>
         </Tabs>
       </CardContent>
