@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Loan Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Loan Calculator App is a simple yet powerful tool built using React and Vite. It helps users to calculate monthly payments, interest rates, and amortization schedules for various loan types. This project includes `sizer`, a utility for processing and adjusting UI components based on viewport size, ensuring a responsive and accessible interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Loan Calculation**: Users can input principal amount, interest rate, and loan duration to get detailed calculations.
+- **Responsive Design**: Utilizes `sizer` to adapt the layout for different devices.
+- **Amortization Schedule**: Provides a detailed breakdown of each payment towards principal and interest over the loan period.
+- **Interest Rate Variability**: Users can compare payments under different interest scenarios.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before you begin, ensure you have the following installed:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v14.x or newer recommended)
+- npm (v6.x or newer)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To get this project up and running on your local machine, follow these steps:
+
+## Usage
+
+Once the app is running, navigate to `http://localhost:3000` in your web browser to start calculating loans. Input the required fields and submit to see results.
+
+## Building and Running in Production
+
+To build the application for production, use:
+
+This will generate a `dist` folder containing optimized assets ready for deployment. Serve the production build using:
