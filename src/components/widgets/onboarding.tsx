@@ -94,7 +94,7 @@ export function Onboarding() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="base-program">Base Program</Label>
-                <Select defaultValue="option1" id="base-program">
+                <Select defaultValue="option1">
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select base program" />
                   </SelectTrigger>
@@ -107,7 +107,7 @@ export function Onboarding() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="use-of-funds">Use of Funds</Label>
-                <Select defaultValue="option1" id="use-of-funds">
+                <Select defaultValue="option1">
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select use of funds" />
                   </SelectTrigger>
@@ -120,7 +120,7 @@ export function Onboarding() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="property-type">Property Type</Label>
-                <Select defaultValue="option1" id="property-type">
+                <Select defaultValue="option1">
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select property type" />
                   </SelectTrigger>
