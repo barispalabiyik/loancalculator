@@ -1,9 +1,15 @@
 /**
  * v0 by Vercel.
- * @see https://v0.dev/t/BPOvCaLH0IP
+ * @see https://v0.dev/t/adjWmraJjWG
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import { Button } from "@/components/ui/button";
+import {
+  AccordionTrigger,
+  AccordionContent,
+  AccordionItem,
+  Accordion,
+} from "@/components/ui/accordion";
 import { Label } from "@/components/ui/label";
 import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
 import {
@@ -21,99 +27,101 @@ import { JSX } from "react/jsx-runtime";
 
 export default function Dashboard() {
   return (
-    <div className="flex h-screen">
-      <aside className="min-w-lg border-r p-4 space-y-4">
+    <div key="1" className="flex h-screen">
+      <aside className="w-64 border-r p-4 space-y-4">
         <Button className="w-full" variant="secondary">
           New Scenario
         </Button>
-        <details className="group" open>
-          <summary className="cursor-pointer text-lg font-medium">
-            Program Information
-          </summary>
-          <div className="mt-2 pl-4 border-l-2 border-dashed border-gray-300 space-y-2">
-            <div className="flex items-center justify-center w-full h-24 border-2 border-dashed border-gray-300 rounded-lg">
-              <CloudUploadIcon className="text-gray-400 w-6 h-6" />
-            </div>
-            <div className="space-y-1">
-              <Label>Branding</Label>
-              <div className="flex items-center space-x-2">
-                <RadioGroup>
-                  <RadioGroupItem
-                    defaultChecked
-                    id="no-branding"
-                    value="no-branding"
-                  />
-                  <Label htmlFor="no-branding">No Branding</Label>
-                </RadioGroup>
+        <Accordion collapsible type="single" defaultValue="program-info">
+          <AccordionItem value="program-info">
+            <AccordionTrigger className="text-lg font-medium">
+              Program Information
+            </AccordionTrigger>
+            <AccordionContent className="mt-2 pl-4 border-l-2 border-dashed border-gray-300 space-y-2">
+              <div className="flex items-center justify-center w-full h-24 border-2 border-dashed border-gray-300 rounded-lg">
+                <CloudUploadIcon className="text-gray-400 w-6 h-6" />
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroup>
-                  <RadioGroupItem id="rcn" value="rcn" />
-                  <Label htmlFor="rcn">RCN</Label>
-                </RadioGroup>
+              <div className="space-y-1">
+                <Label>Branding</Label>
+                <div className="flex items-center space-x-2">
+                  <RadioGroup>
+                    <RadioGroupItem
+                      defaultChecked
+                      id="no-branding"
+                      value="no-branding"
+                    />
+                    <Label htmlFor="no-branding">No Branding</Label>
+                  </RadioGroup>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroup>
+                    <RadioGroupItem id="rcn" value="rcn" />
+                    <Label htmlFor="rcn">RCN</Label>
+                  </RadioGroup>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroup>
+                    <RadioGroupItem id="brokerage" value="brokerage" />
+                    <Label htmlFor="brokerage">Brokerage</Label>
+                  </RadioGroup>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroup>
-                  <RadioGroupItem id="brokerage" value="brokerage" />
-                  <Label htmlFor="brokerage">Brokerage</Label>
-                </RadioGroup>
+              <div className="space-y-1">
+                <Label htmlFor="base-program">
+                  Select Base Program for Calculator
+                </Label>
+                <Select>
+                  <SelectTrigger id="base-program">
+                    <SelectValue placeholder="Select Base Program" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="program-1">Program 1</SelectItem>
+                    <SelectItem value="program-2">Program 2</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="base-program">
-                Select Base Program for Calculator
-              </Label>
-              <Select>
-                <SelectTrigger id="base-program">
-                  <SelectValue placeholder="Select Base Program" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="program-1">Program 1</SelectItem>
-                  <SelectItem value="program-2">Program 2</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="use-of-funds">Use of Funds</Label>
-              <Select>
-                <SelectTrigger id="use-of-funds">
-                  <SelectValue placeholder="Select Use of Funds" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="funds-1">Funds 1</SelectItem>
-                  <SelectItem value="funds-2">Funds 2</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="property-type">Property Type</Label>
-              <Select>
-                <SelectTrigger id="property-type">
-                  <SelectValue placeholder="Select Property Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="type-1">Type 1</SelectItem>
-                  <SelectItem value="type-2">Type 2</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </details>
-        <details className="group">
-          <summary className="cursor-pointer text-lg font-medium">
-            Borrower Info
-          </summary>
-        </details>
-        <details className="group">
-          <summary className="cursor-pointer text-lg font-medium">
-            Property Background
-          </summary>
-        </details>
-        <details className="group">
-          <summary className="cursor-pointer text-lg font-medium">
-            Rehab Info
-          </summary>
-        </details>
+              <div className="space-y-1">
+                <Label htmlFor="use-of-funds">Use of Funds</Label>
+                <Select>
+                  <SelectTrigger id="use-of-funds">
+                    <SelectValue placeholder="Select Use of Funds" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="funds-1">Funds 1</SelectItem>
+                    <SelectItem value="funds-2">Funds 2</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="property-type">Property Type</Label>
+                <Select>
+                  <SelectTrigger id="property-type">
+                    <SelectValue placeholder="Select Property Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="type-1">Type 1</SelectItem>
+                    <SelectItem value="type-2">Type 2</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="borrower-info">
+            <AccordionTrigger className="text-lg font-medium">
+              Borrower Info
+            </AccordionTrigger>
+          </AccordionItem>
+          <AccordionItem value="property-background">
+            <AccordionTrigger className="text-lg font-medium">
+              Property Background
+            </AccordionTrigger>
+          </AccordionItem>
+          <AccordionItem value="rehab-info">
+            <AccordionTrigger className="text-lg font-medium">
+              Rehab Info
+            </AccordionTrigger>
+          </AccordionItem>
+        </Accordion>
       </aside>
       <main className="flex-1 p-4">
         <Tabs>
